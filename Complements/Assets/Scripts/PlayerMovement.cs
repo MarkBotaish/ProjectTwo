@@ -23,20 +23,30 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckInput ();
+        grounded = Physics2D.OverlapCircle (groundCheck.position, 0.2f, ground);
 	}
 
 	void FixedUpdate()
 	{
-		grounded = Physics2D.OverlapCircle (groundCheck.position, 0.2f, ground);
+		
 	}
 
 	void CheckInput()
 	{
-		if (player.GetAxis ("Move Horizontal") != 0.0f) {
-			rb.AddForce (new Vector2 (player.GetAxis ("Move Horizontal") * speed, 0));
-		}
-		if (player.GetButtonDown ("Jump") && grounded) {
-			rb.AddForce (transform.up * jumpSpeed);
+		if (player.GetAxis ("Move Horizontal") > 0.0f) 
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+		
+
+        if (player.GetAxis("Move Horizontal") < 0.0f)
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
+        
+
+        if (player.GetAxis("Move Horizontal") == 0.0f)
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+         
+        
+        if (player.GetButtonDown ("Jump") && grounded) {
+            rb.velocity = transform.up * jumpSpeed;
 			Debug.Log ("Jump");
 		}
 	}

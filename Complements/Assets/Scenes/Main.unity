@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9095fdfa7082aa0408631f259b26ac4d, type: 3}
-  m_Color: {r: 1, g: 0.27058825, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
   playerId: 0
   groundCheck: {fileID: 2080674094}
   speed: 25
-  jumpSpeed: 2000
+  jumpSpeed: 90
   grounded: 0
   ground:
     serializedVersion: 2
@@ -863,12 +863,12 @@ Prefab:
     - target: {fileID: 50780503463956236, guid: 44c7a573140ca1547be72b54166a2799,
         type: 2}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 50369419668412250, guid: 44c7a573140ca1547be72b54166a2799,
         type: 2}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1256935576645438, guid: 44c7a573140ca1547be72b54166a2799, type: 2}
       propertyPath: m_TagString
@@ -897,6 +897,21 @@ Prefab:
     - target: {fileID: 1557824258820474, guid: 44c7a573140ca1547be72b54166a2799, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 50011449484701334, guid: 44c7a573140ca1547be72b54166a2799,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 50780503463956236, guid: 44c7a573140ca1547be72b54166a2799,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50780503463956236, guid: 44c7a573140ca1547be72b54166a2799,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44c7a573140ca1547be72b54166a2799, type: 2}
@@ -952,7 +967,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9095fdfa7082aa0408631f259b26ac4d, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
