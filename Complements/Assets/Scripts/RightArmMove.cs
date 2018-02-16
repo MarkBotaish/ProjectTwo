@@ -9,9 +9,10 @@ public class RightArmMove : MonoBehaviour {
 
 	public int playerId;
 	private Player player;
-	public Transform target;
+	public GameObject target;
+    public int speed;
 
-	public float speed;
+    float angle;
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +26,9 @@ public class RightArmMove : MonoBehaviour {
 
 	void CheckInput()
 	{
-		Vector3 zAxis = new Vector3 (0, 0, 1);
 		if (player.GetButton ("MoveRightArm")) {
-			transform.RotateAround (target.position, zAxis, speed);
-		}
+            target.transform.Rotate(Vector3.forward * speed);
+        }
 	}
 }
 
