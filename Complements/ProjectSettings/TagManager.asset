@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Arm
+  - Chest
+  - GroundCheck
+  - LGrab
+  - RGrab
   layers:
   - Default
   - TransparentFX
