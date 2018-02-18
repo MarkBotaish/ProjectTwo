@@ -26,9 +26,11 @@ public class RightArmMove : MonoBehaviour {
 
 	void CheckInput()
 	{
-		if (player.GetButton ("MoveRightArm")) {
-            target.transform.Rotate(Vector3.forward * speed);
+        if (player.GetAxis("Right Joystick X") != 0.0f || player.GetAxis("Right Joystick Y") != 0.0f)
+        {
+            float angle = Mathf.Atan2(-player.GetAxis("Right Joystick Y"), player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
+            target.transform.rotation = Quaternion.Euler(0, 0, -angle);
         }
-	}
+    }
 }
 
