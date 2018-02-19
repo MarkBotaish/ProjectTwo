@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour {
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
+    float mulitplier = 1.0f;
+
     // Use this for initialization
     void Start () {
 		player = ReInput.players.GetPlayer (playerId);
@@ -71,12 +73,15 @@ public class PlayerMovement : MonoBehaviour {
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
                 climbR = rightGrab.transform.position;
-
+                if (climbR.x <= 0)
+                    mulitplier = 1;
+                else
+                    mulitplier = -1;
             }
             if (!(chestCollide && rightArm.transform.rotation.eulerAngles.z > 270) && !(rightArm.transform.rotation.eulerAngles.z > 240 && rightArm.transform.rotation.eulerAngles.z < 300))
             {
                 //playerObject.transform.position += new Vector3(1.2f, 0.4f,0.0f);
-                playerObject.transform.RotateAround(climbR, -Vector3.forward, climpSpeed * Time.deltaTime);
+                playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
                 //playerObject.transform.position -= new Vector3(1.2f, 0.4f,0.0f);
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
@@ -94,10 +99,15 @@ public class PlayerMovement : MonoBehaviour {
                 rb.gravityScale = (0.0f);
                 climbR = leftGrab.transform.position;
 
+                if (climbR.x <= 0)
+                    mulitplier = 1;
+                else
+                    mulitplier = -1;
+
             }
             if (!(chestCollide && leftArm.transform.rotation.eulerAngles.z < 180) && !(leftArm.transform.rotation.eulerAngles.z < 135 && leftArm.transform.rotation.eulerAngles.z > 75))
             {
-                playerObject.transform.RotateAround(climbR, -Vector3.forward, climpSpeed * Time.deltaTime);
+                playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
                 float rightAngle = Mathf.Atan2(-1.0f * (leftArm.transform.position.y - climbR.y), (leftArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 leftArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
                 playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
@@ -134,5 +144,15 @@ public class PlayerMovement : MonoBehaviour {
     }
     public void setChestCollision(bool tof) {
         chestCollide = tof;
+    }
+
+    public void setRightGrab(bool tof)
+    {
+        canRightGrab = tof;
+    }
+
+    public void setLeftGrab(bool tof)
+    {
+        canLeftGrab = tof;
     }
 }
