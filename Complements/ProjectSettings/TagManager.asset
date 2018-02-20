@@ -20,9 +20,9 @@ TagManager:
   - 
   - Orange
   - Blue
-  - Player
-  - 
-  - 
+  - Player 1
+  - Player 2
+  - Environment
   - 
   - 
   - 
@@ -45,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1079155083
+    locked: 0
+  - name: Static Objects
+    uniqueID: 487788113
+    locked: 0
+  - name: Objects
+    uniqueID: 3454340865
+    locked: 0
+  - name: Players
+    uniqueID: 2439452311
+    locked: 0
+  - name: Foreground
+    uniqueID: 4128942281
     locked: 0
