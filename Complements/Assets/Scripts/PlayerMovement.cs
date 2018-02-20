@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody2D rb;
     bool grounded = false;
     bool chestCollide = false;
-    bool canRightGrab = true;
-    bool canLeftGrab = true;
+    bool canRightGrab = false;
+    bool canLeftGrab = false;
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckInput ();
-        grounded = Physics2D.OverlapCircle (groundCheck.position, 0.2f, ground);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
 	}
 
 	void FixedUpdate()
@@ -46,15 +46,15 @@ public class PlayerMovement : MonoBehaviour {
 
     void CheckInput()
     {
-        if (player.GetAxis("Move Horizontal") > 0.0f)
+        if (player.GetAxis("Move Horizontal") > 0.0f && !(hasPressedLeft || hasPressedRight))
             rb.velocity = new Vector2(speed, rb.velocity.y);
 
 
-        if (player.GetAxis("Move Horizontal") < 0.0f)
+        if (player.GetAxis("Move Horizontal") < 0.0f && !(hasPressedLeft || hasPressedRight))
             rb.velocity = new Vector2(-speed, rb.velocity.y);
 
 
-        if (player.GetAxis("Move Horizontal") == 0.0f)
+        if (player.GetAxis("Move Horizontal") == 0.0f && !(hasPressedLeft || hasPressedRight))
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
 
 
@@ -66,14 +66,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if (player.GetButton("Right Grab") && canRightGrab)
         {
-
+            print("running");
             if (!hasPressedRight)
             {
                 hasPressedRight = true;
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
                 climbR = rightGrab.transform.position;
-                if (climbR.x <= 0)
+                if (rightGrab.transform.position.x - gameObject.transform.position.x <= 0)
                     mulitplier = 1;
                 else
                     mulitplier = -1;
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour {
             }
 
         }
-        else if (player.GetButton("Left Grab") && canLeftGrab)
+        if (player.GetButton("Left Grab") && canLeftGrab)
         {
             if (!hasPressedLeft)
             {
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour {
                 rb.gravityScale = (0.0f);
                 climbR = leftGrab.transform.position;
 
-                if (climbR.x <= 0)
+                if (leftGrab.transform.position.x - gameObject.transform.position.x <= 0)
                     mulitplier = 1;
                 else
                     mulitplier = -1;
@@ -139,7 +139,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             float leftAngle = Mathf.Atan2(player.GetAxis("Right Joystick Y"), -player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
             leftArm.transform.rotation = Quaternion.Euler(0, 0, -leftAngle);
-            print(leftArm.transform.rotation.eulerAngles.z);
         }
     }
     public void setChestCollision(bool tof) {
@@ -149,6 +148,7 @@ public class PlayerMovement : MonoBehaviour {
     public void setRightGrab(bool tof)
     {
         canRightGrab = tof;
+        print("welp");
     }
 
     public void setLeftGrab(bool tof)

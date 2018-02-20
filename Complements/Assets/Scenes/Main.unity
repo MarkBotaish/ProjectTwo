@@ -1855,6 +1855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1205466552}
   - component: {fileID: 1205466553}
+  - component: {fileID: 1205466554}
   m_Layer: 10
   m_Name: LeftGrab
   m_TagString: LGrab
@@ -1898,8 +1899,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.05}
+  m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &1205466554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205466551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21288ececa152924484b0a023b161e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1528390078}
 --- !u!1 &1267263813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,7 +2531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1848383491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2595,7 +2608,7 @@ GameObject:
   - component: {fileID: 1930091495}
   m_Layer: 0
   m_Name: Box (3)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2905,7 +2918,7 @@ GameObject:
   - component: {fileID: 2129574905}
   m_Layer: 0
   m_Name: Box (2)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

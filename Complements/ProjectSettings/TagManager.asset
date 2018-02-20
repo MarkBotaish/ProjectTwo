@@ -9,6 +9,7 @@ TagManager:
   - GroundCheck
   - LGrab
   - RGrab
+  - Climbable
   layers:
   - Default
   - TransparentFX
