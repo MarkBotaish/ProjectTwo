@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     bool hasPressedLeft = false;
 
     float mulitplier = 1.0f;
+    public bool hasJumpOnClimb = false;
 
     // Use this for initialization
     void Start () {
@@ -57,11 +58,28 @@ public class PlayerMovement : MonoBehaviour {
         if (player.GetAxis("Move Horizontal") == 0.0f && !(hasPressedLeft || hasPressedRight))
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
 
+        if (grounded)
+        {
+            print("shit");
+            hasJumpOnClimb = false;
+        }
+         
 
-        if (player.GetButtonDown("Jump") && grounded)
+        if (player.GetButtonDown("Jump") && (grounded || hasJumpOnClimb))
         {
             rb.velocity = transform.up * jumpSpeed;
             Debug.Log("Jump");
+            if (hasJumpOnClimb)
+            {
+                hasPressedLeft = false;
+                hasPressedRight = false;
+                canLeftGrab = false;
+                canRightGrab = false;
+                rb.gravityScale = (30.0f);
+                rb.velocity = new Vector3(5,0,0) * jumpSpeed;
+            }
+            rb.velocity = transform.up * jumpSpeed;
+            hasJumpOnClimb = false;
         }
 
         if (player.GetButton("Right Grab") && canRightGrab)
@@ -154,5 +172,9 @@ public class PlayerMovement : MonoBehaviour {
     public void setLeftGrab(bool tof)
     {
         canLeftGrab = tof;
+    }
+    public void setClimbJump(bool tof)
+    {
+        hasJumpOnClimb = tof;
     }
 }

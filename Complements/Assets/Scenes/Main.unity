@@ -667,6 +667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1848383491}
+  playerV2: {fileID: 1528390078}
+  playerOne: 1
 --- !u!61 &535363199
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1044,7 +1046,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21288ececa152924484b0a023b161e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1528390078}
+  player: {fileID: 1848383491}
+  playerV2: {fileID: 1528390078}
+  playerOne: 0
 --- !u!1 &923952598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21288ececa152924484b0a023b161e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1528390078}
+  player: {fileID: 1848383491}
+  playerV2: {fileID: 1528390078}
+  playerOne: 0
 --- !u!61 &1112891723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1912,7 +1918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21288ececa152924484b0a023b161e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1528390078}
+  player: {fileID: 1848383491}
+  playerV2: {fileID: 1528390078}
+  playerOne: 0
 --- !u!1 &1267263813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1528390078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2229,13 +2237,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1528390077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d03ed39dff01347a671c11829d8eed, type: 3}
+  m_Script: {fileID: 11500000, guid: ce77dcdfd6ee1d04aa152f5ed68b2a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
   speed: 15
   jumpSpeed: 50
-  climpSpeed: 500
+  climpSpeed: 10
   groundCheck: {fileID: 841873954}
   playerObject: {fileID: 1528390077}
   leftArm: {fileID: 1142820394}
@@ -2244,7 +2252,7 @@ MonoBehaviour:
   leftGrab: {fileID: 1205466551}
   ground:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 4294965247
 --- !u!50 &1528390079
 Rigidbody2D:
   serializedVersion: 4
@@ -2381,6 +2389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1683806777}
   - component: {fileID: 1683806776}
+  - component: {fileID: 1683806778}
   m_Layer: 10
   m_Name: LeftGrab
   m_TagString: LGrab
@@ -2426,6 +2435,20 @@ Transform:
   m_Father: {fileID: 414045340}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1683806778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683806775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21288ececa152924484b0a023b161e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1848383491}
+  playerV2: {fileID: 1528390078}
+  playerOne: 1
 --- !u!1 &1755347551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,7 +2554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1848383491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2543,7 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d03ed39dff01347a671c11829d8eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerId: 1
+  playerId: 0
   speed: 15
   jumpSpeed: 50
   climpSpeed: 500
@@ -2837,6 +2860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1848383491}
+  playerV2: {fileID: 1528390078}
+  playerOne: 1
 --- !u!61 &2106014502
 BoxCollider2D:
   m_ObjectHideFlags: 0
