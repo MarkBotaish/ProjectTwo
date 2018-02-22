@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour {
     Vector3 climbR = Vector3.zero;
     Player player;
     Rigidbody2D rb;
+
     bool grounded = false;
     bool chestCollide = false;
     bool canRightGrab = false;
@@ -25,8 +26,9 @@ public class PlayerMovement : MonoBehaviour {
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
+
     float mulitplier = 1.0f;
-    public bool hasJumpOnClimb = false;
+    public bool canJump = false;
 
     // Use this for initialization
     void Start () {
@@ -60,17 +62,19 @@ public class PlayerMovement : MonoBehaviour {
 
         if (grounded)
         {
-            print("shit");
-            hasJumpOnClimb = false;
+            print("FUCKING");
+            canJump = false;
         }
          
 
-        if (player.GetButtonDown("Jump") && (grounded || hasJumpOnClimb))
+        if (player.GetButtonDown("Jump") && (grounded || canJump))
         {
+          
             rb.velocity = transform.up * jumpSpeed;
             Debug.Log("Jump");
-            if (hasJumpOnClimb)
+            if (canJump)
             {
+                canJump = true;
                 hasPressedLeft = false;
                 hasPressedRight = false;
                 canLeftGrab = false;
@@ -79,14 +83,14 @@ public class PlayerMovement : MonoBehaviour {
                 rb.velocity = new Vector3(5,0,0) * jumpSpeed;
             }
             rb.velocity = transform.up * jumpSpeed;
-            hasJumpOnClimb = false;
+            canJump = false;
         }
 
         if (player.GetButton("Right Grab") && canRightGrab)
         {
-            print("running");
             if (!hasPressedRight)
             {
+                canJump = true;
                 hasPressedRight = true;
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
@@ -166,15 +170,10 @@ public class PlayerMovement : MonoBehaviour {
     public void setRightGrab(bool tof)
     {
         canRightGrab = tof;
-        print("welp");
     }
 
     public void setLeftGrab(bool tof)
     {
         canLeftGrab = tof;
-    }
-    public void setClimbJump(bool tof)
-    {
-        hasJumpOnClimb = tof;
     }
 }

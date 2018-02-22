@@ -2243,7 +2243,7 @@ MonoBehaviour:
   playerId: 0
   speed: 15
   jumpSpeed: 50
-  climpSpeed: 10
+  climpSpeed: 500
   groundCheck: {fileID: 841873954}
   playerObject: {fileID: 1528390077}
   leftArm: {fileID: 1142820394}
@@ -2252,7 +2252,7 @@ MonoBehaviour:
   leftGrab: {fileID: 1205466551}
   ground:
     serializedVersion: 2
-    m_Bits: 4294965247
+    m_Bits: 4294957055
 --- !u!50 &1528390079
 Rigidbody2D:
   serializedVersion: 4
@@ -2272,7 +2272,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!4 &1528390080
 Transform:
   m_ObjectHideFlags: 0
@@ -2578,7 +2578,8 @@ MonoBehaviour:
   leftGrab: {fileID: 1683806775}
   ground:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 4294958079
+  canJump: 0
 --- !u!50 &1848383492
 Rigidbody2D:
   serializedVersion: 4
@@ -2629,7 +2630,7 @@ GameObject:
   - component: {fileID: 1930091497}
   - component: {fileID: 1930091496}
   - component: {fileID: 1930091495}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Box (3)
   m_TagString: Climbable
   m_Icon: {fileID: 0}
@@ -2941,7 +2942,7 @@ GameObject:
   - component: {fileID: 2129574907}
   - component: {fileID: 2129574906}
   - component: {fileID: 2129574905}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Box (2)
   m_TagString: Climbable
   m_Icon: {fileID: 0}

@@ -39,6 +39,7 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
     {
         CheckInput();
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
+
     }
 
     void FixedUpdate()
@@ -85,6 +86,7 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
+                gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 0.0f));
             }
 
         }
@@ -108,6 +110,7 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
                 float rightAngle = Mathf.Atan2(-1.0f * (leftArm.transform.position.y - climbR.y), (leftArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 leftArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
+                gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f,0.0f,0.0f));
        
             }
         }

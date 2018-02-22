@@ -24,10 +24,6 @@ public class ChildCollision : MonoBehaviour {
 
                     player.setLeftGrab(true);
 
-                if(gameObject.tag != "Chest")
-                {
-                    player.setClimbJump(true);
-                }
             }
             else
             {
@@ -35,7 +31,7 @@ public class ChildCollision : MonoBehaviour {
                     playerV2.setChestCollision(true);
 
                 if (gameObject.tag == "RGrab")
-                    playerV2.setRightGrab(true);
+                   playerV2.setRightGrab(true);
 
                 if (gameObject.tag == "LGrab")
                     playerV2.setLeftGrab(true);
@@ -62,11 +58,6 @@ public class ChildCollision : MonoBehaviour {
                 if (gameObject.tag == "LGrab")
 
                     player.setLeftGrab(false);
-
-                if (gameObject.tag != "Chest")
-                {
-                    player.setClimbJump(false);
-                }
             }
             else
             {
