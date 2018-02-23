@@ -10,6 +10,7 @@ TagManager:
   - LGrab
   - RGrab
   - Climbable
+  - Rope
   layers:
   - Default
   - TransparentFX

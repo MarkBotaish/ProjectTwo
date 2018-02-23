@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (grounded)
         {
-            print("shit");
+            //print("shit");
             hasJumpOnClimb = false;
         }
          

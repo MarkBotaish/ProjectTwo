@@ -1313,6 +1313,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 0
+    - _id: 10
+      _name: Move Vertical
+      _type: 0
+      _descriptiveName: Move Vertical
+      _positiveDescriptiveName: Move Up
+      _negativeDescriptiveName: Move Down
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -1332,7 +1341,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+        actionIds: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
       - categoryId: 2
         actionIds: 
       - categoryId: 3
@@ -1492,12 +1501,23 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 10
+        _elementType: 0
+        _elementIdentifierId: 1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     keyboardMaps: []
     mouseMaps: []
     customControllerMaps: []
     customControllers: []
     playerIdCounter: 4
-    actionIdCounter: 10
+    actionIdCounter: 11
     actionCategoryIdCounter: 4
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
@@ -1723,6 +1743,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1049437175
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685154187756008, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d69d2e3adb73470428e405d4e3656f10, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1089395429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2610,7 @@ GameObject:
   - component: {fileID: 1848383493}
   - component: {fileID: 1848383492}
   - component: {fileID: 1848383491}
+  - component: {fileID: 1848383494}
   m_Layer: 10
   m_Name: PlayerTwo
   m_TagString: Player
@@ -2579,6 +2642,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 4294966271
+  hasJumpOnClimb: 0
 --- !u!50 &1848383492
 Rigidbody2D:
   serializedVersion: 4
@@ -2619,6 +2683,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848383494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848383490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3450da34b3d4749934aa9de4f1c7cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 0
+  speed: 5
 --- !u!1 &1930091494
 GameObject:
   m_ObjectHideFlags: 0
