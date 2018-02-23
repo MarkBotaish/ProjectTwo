@@ -66,6 +66,11 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
             rb.velocity = transform.up * jumpSpeed;
             Debug.Log("Jump");
         }
+        else if(player.GetButtonDown("Jump"))
+        {
+            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f,0.0f,0.0f));
+            print("straight");
+        }
 
         if (player.GetButton("Right Grab") && canRightGrab)
         {
@@ -81,12 +86,12 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
                 else
                     mulitplier = -1;
             }
-            if (!(chestCollide && rightArm.transform.rotation.eulerAngles.z > 270))
+            if (Vector3.Distance(climbR, gameObject.transform.position) < 2.0)
             {
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
-                gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 0.0f));
+                //gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 0.0f));
             }
 
         }
@@ -110,7 +115,7 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
                 float rightAngle = Mathf.Atan2(-1.0f * (leftArm.transform.position.y - climbR.y), (leftArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 leftArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
-                gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f,0.0f,0.0f));
+                //gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f,0.0f,0.0f));
        
             }
         }
@@ -127,7 +132,12 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
 
         if (!hasPressedLeft && !hasPressedRight)
         {
+            rb.freezeRotation = true;
             rb.gravityScale = (30.0f);
+        }
+        else
+        {
+            rb.freezeRotation = false;
         }
 
         if ((player.GetAxis("Right Joystick X") != 0.0f || player.GetAxis("Right Joystick Y") != 0.0f) && !player.GetButton("Right Grab"))
@@ -150,7 +160,6 @@ public class PlayerMovementVersionTwo : MonoBehaviour {
     public void setRightGrab(bool tof)
     {
         canRightGrab = tof;
-        print("welp");
     }
 
     public void setLeftGrab(bool tof)

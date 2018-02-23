@@ -116,6 +116,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (!hasPressedLeft)
             {
+                canJump = true;
                 hasPressedLeft = true;
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
