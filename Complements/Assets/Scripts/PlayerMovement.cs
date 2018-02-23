@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour {
     Vector3 climbR = Vector3.zero;
     Player player;
     Rigidbody2D rb;
+
     bool grounded = false;
     bool chestCollide = false;
     bool canRightGrab = false;
@@ -25,8 +26,9 @@ public class PlayerMovement : MonoBehaviour {
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
+
     float mulitplier = 1.0f;
-    public bool hasJumpOnClimb = false;
+    public bool canJump = false;
 
     // Use this for initialization
     void Start () {
@@ -60,16 +62,21 @@ public class PlayerMovement : MonoBehaviour {
 
         if (grounded)
         {
+<<<<<<< HEAD
             //print("shit");
             hasJumpOnClimb = false;
+=======
+            canJump = false;
+>>>>>>> 4f036198e2c0e16cf5cac2e893858cd0463cf5d7
         }
          
 
-        if (player.GetButtonDown("Jump") && (grounded || hasJumpOnClimb))
+        if (player.GetButtonDown("Jump") && (grounded || canJump))
         {
+          
             rb.velocity = transform.up * jumpSpeed;
             Debug.Log("Jump");
-            if (hasJumpOnClimb)
+            if (canJump)
             {
                 hasPressedLeft = false;
                 hasPressedRight = false;
@@ -79,14 +86,14 @@ public class PlayerMovement : MonoBehaviour {
                 rb.velocity = new Vector3(5,0,0) * jumpSpeed;
             }
             rb.velocity = transform.up * jumpSpeed;
-            hasJumpOnClimb = false;
+            canJump = false;
         }
 
         if (player.GetButton("Right Grab") && canRightGrab)
         {
-            print("running");
             if (!hasPressedRight)
             {
+                canJump = true;
                 hasPressedRight = true;
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
@@ -98,9 +105,8 @@ public class PlayerMovement : MonoBehaviour {
             }
             if (!(chestCollide && rightArm.transform.rotation.eulerAngles.z > 270) && !(rightArm.transform.rotation.eulerAngles.z > 240 && rightArm.transform.rotation.eulerAngles.z < 300))
             {
-                //playerObject.transform.position += new Vector3(1.2f, 0.4f,0.0f);
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
-                //playerObject.transform.position -= new Vector3(1.2f, 0.4f,0.0f);
+
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
                 playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
@@ -112,6 +118,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (!hasPressedLeft)
             {
+                canJump = true;
                 hasPressedLeft = true;
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
@@ -166,15 +173,10 @@ public class PlayerMovement : MonoBehaviour {
     public void setRightGrab(bool tof)
     {
         canRightGrab = tof;
-        print("welp");
     }
 
     public void setLeftGrab(bool tof)
     {
         canLeftGrab = tof;
-    }
-    public void setClimbJump(bool tof)
-    {
-        hasJumpOnClimb = tof;
     }
 }
