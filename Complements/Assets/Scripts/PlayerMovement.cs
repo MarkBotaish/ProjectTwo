@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour {
 
         if (grounded)
         {
-            print("FUCKING");
             canJump = false;
         }
          
@@ -74,7 +73,6 @@ public class PlayerMovement : MonoBehaviour {
             Debug.Log("Jump");
             if (canJump)
             {
-                canJump = true;
                 hasPressedLeft = false;
                 hasPressedRight = false;
                 canLeftGrab = false;
@@ -102,9 +100,8 @@ public class PlayerMovement : MonoBehaviour {
             }
             if (!(chestCollide && rightArm.transform.rotation.eulerAngles.z > 270) && !(rightArm.transform.rotation.eulerAngles.z > 240 && rightArm.transform.rotation.eulerAngles.z < 300))
             {
-                //playerObject.transform.position += new Vector3(1.2f, 0.4f,0.0f);
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
-                //playerObject.transform.position -= new Vector3(1.2f, 0.4f,0.0f);
+
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
                 playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
