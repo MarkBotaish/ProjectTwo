@@ -624,7 +624,7 @@ MonoBehaviour:
   leftGrab: {fileID: 1915194552754562}
   ground:
     serializedVersion: 2
-    m_Bits: 4294957055
+    m_Bits: 4294952959
 --- !u!114 &114690993597636738
 MonoBehaviour:
   m_ObjectHideFlags: 1

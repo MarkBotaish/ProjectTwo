@@ -986,15 +986,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114647840953140588, guid: 08632f7a15d10ca44b45db8bf88395aa,
-        type: 2}
-      propertyPath: ground.m_Bits
-      value: 4294952959
-      objectReference: {fileID: 0}
-    - target: {fileID: 1846119722322072, guid: 08632f7a15d10ca44b45db8bf88395aa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08632f7a15d10ca44b45db8bf88395aa, type: 2}
   m_IsPrefabParent: 0
@@ -1415,16 +1406,6 @@ Prefab:
     - target: {fileID: 4735431386778386, guid: 4f5e655736df8e842a7cfdf4e058877b, type: 2}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 114920074949037804, guid: 4f5e655736df8e842a7cfdf4e058877b,
-        type: 2}
-      propertyPath: ground.m_Bits
-      value: 4294962175
-      objectReference: {fileID: 0}
-    - target: {fileID: 114920074949037804, guid: 4f5e655736df8e842a7cfdf4e058877b,
-        type: 2}
-      propertyPath: playerId
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f5e655736df8e842a7cfdf4e058877b, type: 2}

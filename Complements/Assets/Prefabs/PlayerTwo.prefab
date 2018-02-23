@@ -652,7 +652,7 @@ MonoBehaviour:
   leftGrab: {fileID: 1545839053446952}
   ground:
     serializedVersion: 2
-    m_Bits: 4294958079
+    m_Bits: 4294962175
   canJump: 0
 --- !u!212 &212206037774494632
 SpriteRenderer:
