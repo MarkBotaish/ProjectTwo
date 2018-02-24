@@ -23,9 +23,6 @@ public class ObjectInteraction : MonoBehaviour {
 			transform.SetParent (arm);
 			Debug.Log ("Interact");
 		}
-		if (player.GetButtonDown ("Interact") && transform.parent == arm) {
-			transform.parent = null;
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

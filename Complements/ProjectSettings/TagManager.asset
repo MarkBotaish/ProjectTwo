@@ -10,7 +10,7 @@ TagManager:
   - LGrab
   - RGrab
   - Climbable
-  - Rope
+  - PlayerHead
   layers:
   - Default
   - TransparentFX
