@@ -964,6 +964,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1829495008
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 25.107616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.12030122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.52548754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428256699036334, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1848383490 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1631402539381670, guid: 4f5e655736df8e842a7cfdf4e058877b,
@@ -1207,7 +1249,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 2.8, y: 2.56}
   m_EdgeRadius: 0
 --- !u!1 &2129574904
 GameObject:

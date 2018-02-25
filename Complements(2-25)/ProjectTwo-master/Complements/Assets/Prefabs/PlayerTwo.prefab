@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4032739133774220}
   - component: {fileID: 70700563929232872}
   m_Layer: 11
-  m_Name: GameObject
+  m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 58347986279568792}
   m_Layer: 11
   m_Name: v4-head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,8 +577,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.57, y: 1.06}
+  m_Offset: {x: 0, y: 0.22250617}
+  m_Size: {x: 0.57, y: 1.5050123}
   m_Direction: 0
 --- !u!114 &114136151192747730
 MonoBehaviour:
@@ -641,6 +641,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294951935
   canJump: 0
+  grabEffect: {fileID: 1654937298616542, guid: bc3ed55960f996e4584571fa66a3eb7d, type: 2}
 --- !u!212 &212206037774494632
 SpriteRenderer:
   m_ObjectHideFlags: 1

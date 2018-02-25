@@ -18,11 +18,12 @@ public class PlayerMovement : MonoBehaviour {
     Vector3 climbR = Vector3.zero;
     Player player;
     Rigidbody2D rb;
+    float distance;
 
     bool grounded = false;
     bool chestCollide = false;
-    bool canRightGrab = false;
-    bool canLeftGrab = false;
+    bool canRightGrab = true;
+    bool canLeftGrab = true;
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckInput ();
-        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
 	}
 
 	void FixedUpdate()
@@ -84,7 +85,9 @@ public class PlayerMovement : MonoBehaviour {
                 rb.gravityScale = (30.0f);
                 rb.velocity = new Vector3(5,0,0) * jumpSpeed;
             }
-            rb.velocity = transform.up * jumpSpeed;
+                rb.velocity = transform.up * jumpSpeed;
+            
+            
             canJump = false;
         }
 
@@ -98,6 +101,8 @@ public class PlayerMovement : MonoBehaviour {
                 rb.gravityScale = (0.0f);
                 climbR = rightGrab.transform.position;
 				GrabEffect(climbR);
+                distance = Vector3.Distance(transform.position, climbR);
+
 				if (rightGrab.transform.position.x - gameObject.transform.position.x <= 0)
                     mulitplier = 1;
                 else
@@ -105,12 +110,15 @@ public class PlayerMovement : MonoBehaviour {
             }
             if (!(chestCollide && rightArm.transform.rotation.eulerAngles.z > 270) && !(rightArm.transform.rotation.eulerAngles.z > 240 && rightArm.transform.rotation.eulerAngles.z < 300))
             {
+                
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
+                if (!(Vector3.Distance(transform.position, climbR) < distance) && !chestCollide)
+                    transform.position = Vector3.MoveTowards(transform.position, climbR, 0.5f);
 
-                float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
+
+                    float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
                 playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-
             }
 
         }
@@ -118,12 +126,14 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (!hasPressedLeft)
 			{
+           
 				canJump = true;
                 hasPressedLeft = true;
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = (0.0f);
                 climbR = leftGrab.transform.position;
 				GrabEffect(climbR);
+                distance = Vector3.Distance(transform.position, climbR);
 
                 if (leftGrab.transform.position.x - gameObject.transform.position.x <= 0)
                     mulitplier = 1;
@@ -134,6 +144,11 @@ public class PlayerMovement : MonoBehaviour {
             if (!(chestCollide && leftArm.transform.rotation.eulerAngles.z < 180) && !(leftArm.transform.rotation.eulerAngles.z < 135 && leftArm.transform.rotation.eulerAngles.z > 75))
             {
                 playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
+
+                if (!(Vector3.Distance(transform.position, climbR) < distance) && !chestCollide)
+                    transform.position = Vector3.MoveTowards(transform.position, climbR, 0.5f);
+
+
                 float rightAngle = Mathf.Atan2(-1.0f * (leftArm.transform.position.y - climbR.y), (leftArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 leftArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
                 playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
