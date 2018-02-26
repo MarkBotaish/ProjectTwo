@@ -1014,6 +1014,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 1846119722322072, guid: 08632f7a15d10ca44b45db8bf88395aa, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376237291151076, guid: 08632f7a15d10ca44b45db8bf88395aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719040745758746, guid: 08632f7a15d10ca44b45db8bf88395aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+>>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
     - target: {fileID: 4643850293957158, guid: 08632f7a15d10ca44b45db8bf88395aa, type: 2}
       propertyPath: m_RootOrder
       value: 0
@@ -1805,6 +1820,7 @@ Prefab:
     - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
       propertyPath: m_LocalRotation.x
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -0.00872409
       objectReference: {fileID: 0}
     - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
@@ -1833,11 +1849,27 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.9999619
 >>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
+=======
+      value: -0.008727774
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999619
+>>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
       objectReference: {fileID: 0}
     - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 4883350341041870, guid: b5910f5070851f2418a6eaa9afa0cb2f, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1851,6 +1883,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.998
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
 >>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
     m_RemovedComponents: []
