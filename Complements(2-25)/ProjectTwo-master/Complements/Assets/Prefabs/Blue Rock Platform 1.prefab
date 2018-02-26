@@ -105,6 +105,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -130,6 +131,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+=======
+>>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
 >>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
