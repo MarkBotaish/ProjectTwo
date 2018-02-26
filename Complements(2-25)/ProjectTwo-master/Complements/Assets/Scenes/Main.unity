@@ -189,6 +189,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &70105410
 Prefab:
   m_ObjectHideFlags: 0
@@ -391,6 +392,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+=======
+>>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
 >>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
@@ -1324,6 +1327,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &1829495008
 Prefab:
@@ -1383,6 +1387,8 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 27f627b52b2b2304f8a33144056447b4, type: 2}
   m_IsPrefabParent: 0
 >>>>>>> bb60ee3ef6e7181ea08b9c7d9b250fd5b75c6824
+=======
+>>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
 >>>>>>> parent of 7a6cc3f... Merge branch 'master' of https://github.com/MarkBotaish/ProjectTwo
 =======
