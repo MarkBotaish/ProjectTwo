@@ -11,6 +11,7 @@ TagManager:
   - RGrab
   - Climbable
   - PlayerHead
+  - Legs
   layers:
   - Default
   - TransparentFX

@@ -21,19 +21,19 @@ public class PlayerMovement : MonoBehaviour {
     float distance;
 
     bool grounded = false;
-    bool chestCollide = false;
-    bool canRightGrab = true;
-    bool canLeftGrab = true;
+    bool canRightGrab = false;
+    bool canLeftGrab = false;
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
-
-    float mulitplier = 1.0f;
     public bool canJump = false;
+
+    bool stopMovingX = false;
 
 	//Particle Effects - Andy
 	public GameObject grabEffect;
 
+    float x;
 
     // Use this for initialization
     void Start () {
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckInput ();
-        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.05f, ground);
 	}
 
 	void FixedUpdate()
@@ -66,92 +66,56 @@ public class PlayerMovement : MonoBehaviour {
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
 
         if (grounded)
-        {
             canJump = false;
-        }
          
 
-        if (player.GetButtonDown("Jump") && (grounded || canJump))
+        if (player.GetButtonDown("Jump") && grounded && !canJump)
         {
-          
             rb.velocity = transform.up * jumpSpeed;
-            Debug.Log("Jump");
-            if (canJump)
-            {
-                hasPressedLeft = false;
-                hasPressedRight = false;
-                canLeftGrab = false;
-                canRightGrab = false;
-                rb.gravityScale = (30.0f);
-                rb.velocity = new Vector3(5,0,0) * jumpSpeed;
-            }
-                rb.velocity = transform.up * jumpSpeed;
-            
-            
+        }else if (player.GetButtonDown("Jump") && canJump)
+        {
             canJump = false;
+            rb.gravityScale = (30.0f);
+            rb.velocity = transform.up * jumpSpeed;
+            hasPressedRight = false;
+            hasPressedLeft = false;
+            canLeftGrab = false;
+            canRightGrab = false;
+        
         }
 
         if (player.GetButton("Right Grab") && canRightGrab)
         {
             if (!hasPressedRight)
-			{
-				canJump = true;
-                hasPressedRight = true;
-                rb.velocity = Vector3.zero;
-                rb.gravityScale = (0.0f);
-                climbR = rightGrab.transform.position;
-				GrabEffect(climbR);
-                distance = Vector3.Distance(transform.position, climbR);
-
-				if (rightGrab.transform.position.x - gameObject.transform.position.x <= 0)
-                    mulitplier = 1;
-                else
-                    mulitplier = -1;
-            }
-            if (!(chestCollide && rightArm.transform.rotation.eulerAngles.z > 270) && !(rightArm.transform.rotation.eulerAngles.z > 240 && rightArm.transform.rotation.eulerAngles.z < 300))
+                InitClimb(rightGrab, ref hasPressedRight);
+            
+            if (climbR.y >= transform.position.y || !stopMovingX)
             {
+                x = climbR.x;
+                if (stopMovingX)
+                    x = transform.position.x;
+             
+                gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, climbR.y,0.0f), 5.0f * Time.deltaTime);
                 
-                playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
-                if (!(Vector3.Distance(transform.position, climbR) < distance) && !chestCollide)
-                    transform.position = Vector3.MoveTowards(transform.position, climbR, 0.5f);
-
-
-                    float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
+                float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
-                playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             }
 
         }
         if (player.GetButton("Left Grab") && canLeftGrab)
         {
             if (!hasPressedLeft)
-			{
-           
-				canJump = true;
-                hasPressedLeft = true;
-                rb.velocity = Vector3.zero;
-                rb.gravityScale = (0.0f);
-                climbR = leftGrab.transform.position;
-				GrabEffect(climbR);
-                distance = Vector3.Distance(transform.position, climbR);
-
-                if (leftGrab.transform.position.x - gameObject.transform.position.x <= 0)
-                    mulitplier = 1;
-                else
-                    mulitplier = -1;
-
-            }
-            if (!(chestCollide && leftArm.transform.rotation.eulerAngles.z < 180) && !(leftArm.transform.rotation.eulerAngles.z < 135 && leftArm.transform.rotation.eulerAngles.z > 75))
+                InitClimb(leftGrab,ref hasPressedLeft);
+            if (climbR.y > transform.position.y || !stopMovingX)
             {
-                playerObject.transform.RotateAround(climbR, mulitplier * Vector3.forward, climpSpeed * Time.deltaTime);
+                x = climbR.x;
+                if (stopMovingX)
+                    x = transform.position.x;
 
-                if (!(Vector3.Distance(transform.position, climbR) < distance) && !chestCollide)
-                    transform.position = Vector3.MoveTowards(transform.position, climbR, 0.5f);
-
-
-                float rightAngle = Mathf.Atan2(-1.0f * (leftArm.transform.position.y - climbR.y), (leftArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
-                leftArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
-                playerObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, climbR.y, 0.0f), 5.0f * Time.deltaTime);
+                
+                float leftAngle = Mathf.Atan2(-1.0f * (leftArm.transform.position.y - climbR.y), (leftArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
+                leftArm.transform.rotation = Quaternion.Euler(0, 0, -leftAngle);
             }
         }
 
@@ -182,9 +146,6 @@ public class PlayerMovement : MonoBehaviour {
             leftArm.transform.rotation = Quaternion.Euler(0, 0, -leftAngle);
         }
     }
-    public void setChestCollision(bool tof) {
-        chestCollide = tof;
-    }
 
     public void setRightGrab(bool tof)
     {
@@ -195,14 +156,33 @@ public class PlayerMovement : MonoBehaviour {
     {
         canLeftGrab = tof;
     }
+    public void dontMoveX()
+    {
+        stopMovingX = true;
+    }
 
-	//Spawns particles at location of player's hand
-	private void GrabEffect(Vector2 _spawnPos)
+    public void MoveX()
+    {
+        stopMovingX = false;
+    }
+
+    //Spawns particles at location of player's hand
+    private void GrabEffect(Vector2 _spawnPos)
 	{
 		GameObject grabParticles = Instantiate(grabEffect);
 		Vector2 spawnPos = _spawnPos;
 		grabParticles.transform.position = spawnPos;
 		SoundManager.code.PlayGrab();
 	}
+
+    void InitClimb(GameObject temp, ref bool leftOrRight)
+    {
+        canJump = true;
+        leftOrRight = true;
+        rb.velocity = Vector3.zero;
+        rb.gravityScale = (0.0f);
+        climbR = temp.transform.position;
+        GrabEffect(climbR);
+    }
 
 }
