@@ -7,10 +7,9 @@ public class ObjectInteraction : MonoBehaviour {
 
 	public int playerId;
 	private Player player;
-	public Transform arm;
+	private Transform arm;
 
 	bool canHold = false;
-    bool isHolding = false;
 
 	// Use this for initialization
 	void Start () {
@@ -20,26 +19,16 @@ public class ObjectInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(player.GetButtonDown("Interact") && arm != null && canHold && !isHolding ){
-            transform.position = arm.transform.position;
-            gameObject.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
-
-            transform.SetParent (arm);
-            isHolding = true;
-		}else if (player.GetButtonDown("Interact") && isHolding)
-        {
-            gameObject.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            arm.gameObject.transform.DetachChildren();
-            arm = null;
-            canHold = false;
-            isHolding = false;
-        }
-    }
+		if(player.GetButtonDown("Interact") && arm != null && canHold){
+			transform.SetParent (arm);
+			Debug.Log ("Interact");
+		}
+	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "RGrab" || col.gameObject.tag == "LGrab") {
+		if (col.gameObject.tag == "Arm") {
+			Debug.Log ("Trigger Enter");
 			canHold = true;
 			arm = col.transform;
 		}
@@ -47,8 +36,8 @@ public class ObjectInteraction : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D col)
 	{
-        if ((col.gameObject.tag == "RGrab" || col.gameObject.tag == "LGrab") && !isHolding)
-        {
+		if (col.gameObject.tag == "Arm") {
+			Debug.Log ("Trigger Exit");
 			canHold = false;
 			arm = null;
 		}

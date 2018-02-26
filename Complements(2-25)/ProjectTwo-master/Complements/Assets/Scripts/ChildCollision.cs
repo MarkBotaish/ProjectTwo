@@ -10,15 +10,14 @@ public class ChildCollision : MonoBehaviour {
     {
         if(collision.tag == "Climbable")
         {
-
-            if (gameObject.tag == "Chest")
-                player.setChestCollision(true);
-
             if (gameObject.tag == "RGrab")
                 player.setRightGrab(true);
 
             if (gameObject.tag == "LGrab")
                 player.setLeftGrab(true);
+
+            if (gameObject.tag == "Legs" && collision.tag == "Climbable")
+                player.dontMoveX();
 
         }
 
@@ -28,15 +27,14 @@ public class ChildCollision : MonoBehaviour {
     {
         if (collision.tag == "Climbable")
         {
-
-            if (gameObject.tag == "Chest")
-                player.setChestCollision(false);
-
             if (gameObject.tag == "RGrab")
                 player.setRightGrab(false);
 
             if (gameObject.tag == "LGrab")
                 player.setLeftGrab(false);
+
+            if (gameObject.tag == "Legs" && collision.tag == "Climbable")
+                player.MoveX();
         }
     }
 }

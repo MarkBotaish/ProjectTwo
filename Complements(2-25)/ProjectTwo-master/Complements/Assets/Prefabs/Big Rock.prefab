@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4883350341041870}
   - component: {fileID: 212105187135190434}
-  - component: {fileID: 60350764294650740}
+  - component: {fileID: 60405185340348578}
   m_Layer: 12
   m_Name: Big Rock
   m_TagString: Climbable
@@ -34,14 +34,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981386825096060}
-  m_LocalRotation: {x: -0.008727774, y: -0, z: -0, w: 0.9999619}
+  m_LocalRotation: {x: -0.008709106, y: -0.0005705387, z: 0.065368004, w: 0.99782306}
   m_LocalPosition: {x: -20.21, y: -4.82, z: 0.484375}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1, y: 0, z: 0}
---- !u!60 &60350764294650740
+  m_LocalEulerAnglesHint: {x: -0.99200004, y: -0.13000001, z: 7.497}
+--- !u!60 &60405185340348578
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,7 +49,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1981386825096060}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: af92d05907059a048891d30fc3841a04, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -65,12 +65,32 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.0261879, y: -2.2467244}
-      - {x: 1.1134586, y: -2.2472675}
+    - - {x: 1.61, y: -2.2}
+      - {x: 1.55, y: -2.1599998}
+      - {x: 1.41, y: -2.09}
+      - {x: 1.26, y: -1.9499999}
+      - {x: 1.1999999, y: -1.86}
+      - {x: 1.16, y: -1.75}
+      - {x: 1.1, y: -1.51}
+      - {x: 1.0799999, y: -1.26}
+      - {x: 0.96999997, y: -0.59999996}
+      - {x: 0.96, y: -0.59}
+      - {x: 0.96, y: -0.06}
+      - {x: 0.96999997, y: -0.049999997}
+      - {x: 0.97999996, y: 0.049999997}
+      - {x: 0.98999995, y: 0.19999999}
+      - {x: 0.95, y: 0.26}
+      - {x: 0.94, y: 0.32}
+      - {x: 0.93, y: 0.45999998}
       - {x: 0.90999997, y: 0.59999996}
       - {x: 0.88, y: 0.71}
-      - {x: 0.7311039, y: 0.7397745}
+      - {x: 0.87, y: 0.74}
+      - {x: 0.78, y: 0.83}
+      - {x: 0.78, y: 0.87}
+      - {x: 0.76, y: 0.97999996}
       - {x: 0.64, y: 1.39}
+      - {x: 0.66999996, y: 1.48}
+      - {x: 0.65999997, y: 1.5899999}
       - {x: 0.59999996, y: 1.77}
       - {x: 0.53999996, y: 2}
       - {x: 0.51, y: 2.07}
@@ -100,7 +120,11 @@ PolygonCollider2D:
       - {x: -1.3399999, y: -0.17999999}
       - {x: -1.36, y: -0.34}
       - {x: -1.4699999, y: -0.94}
+      - {x: -1.4699999, y: -1.2099999}
+      - {x: -1.51, y: -1.39}
+      - {x: -1.52, y: -1.55}
       - {x: -1.56, y: -1.8199999}
+      - {x: -1.61, y: -2.07}
       - {x: -1.6899999, y: -2.22}
       - {x: -1.7199999, y: -2.28}
       - {x: -1.75, y: -2.37}
@@ -109,6 +133,10 @@ PolygonCollider2D:
       - {x: -1.9, y: -2.6499999}
       - {x: -1.9499999, y: -2.71}
       - {x: -1.9499999, y: -2.72}
+      - {x: 1.92, y: -2.72}
+      - {x: 1.89, y: -2.6499999}
+      - {x: 1.7199999, y: -2.33}
+      - {x: 1.66, y: -2.24}
 --- !u!212 &212105187135190434
 SpriteRenderer:
   m_ObjectHideFlags: 1
