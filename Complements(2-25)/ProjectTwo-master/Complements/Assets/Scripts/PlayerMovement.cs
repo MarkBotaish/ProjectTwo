@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour {
 
     bool stopMovingX = false;
 
+    float prevLeft = 0;
+    float deltaLeft = 0;
+
 	//Particle Effects - Andy
 	public GameObject grabEffect;
 
@@ -99,6 +102,7 @@ public class PlayerMovement : MonoBehaviour {
                 
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
                 rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
+         
             }
 
         }
@@ -137,6 +141,8 @@ public class PlayerMovement : MonoBehaviour {
         if ((player.GetAxis("Right Joystick X") != 0.0f || player.GetAxis("Right Joystick Y") != 0.0f) && !player.GetButton("Right Grab"))
         {
             float rightAngle = Mathf.Atan2(-player.GetAxis("Right Joystick Y"), player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
+            deltaLeft = (rightAngle + 180) - prevLeft;
+            prevLeft = rightAngle +180;
             rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
         }
 
@@ -164,6 +170,11 @@ public class PlayerMovement : MonoBehaviour {
     public void MoveX()
     {
         stopMovingX = false;
+    }
+
+    public float getdeltaLeft()
+    {
+        return Mathf.Abs(deltaLeft);
     }
 
     //Spawns particles at location of player's hand

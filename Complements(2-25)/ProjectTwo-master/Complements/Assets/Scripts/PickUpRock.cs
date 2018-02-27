@@ -6,9 +6,11 @@ using Rewired;
 public class PickUpRock : MonoBehaviour {
 
 	public int playerId;
+    public PlayerMovement playerObject;
 	private Player player;
     Transform arm;
 	Rigidbody2D rb;
+    float velocity = 0;
 
 	bool canHold = false;
     bool isHolding = false;
@@ -41,7 +43,11 @@ public class PickUpRock : MonoBehaviour {
             resetCube();
 		}
         if (isHolding)
+        {
             gameObject.transform.position = arm.position;
+            velocity = playerObject.getdeltaLeft();
+           // print(velocity);
+        }
 
 	}
 
@@ -65,6 +71,12 @@ public class PickUpRock : MonoBehaviour {
         arm.DetachChildren();
         GetComponent<BoxCollider2D>().isTrigger = false;
         rb.constraints = RigidbodyConstraints2D.None;
+        
+        rb.velocity = Vector3.up * (velocity / 180) * 200;
+        if (rb.velocity.magnitude > 15)
+            rb.velocity = rb.velocity.normalized * 15;
+
+        print(rb.velocity);
         isHolding = false;
         arm = null;
 
