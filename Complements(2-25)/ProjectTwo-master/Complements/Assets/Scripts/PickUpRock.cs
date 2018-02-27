@@ -7,7 +7,7 @@ public class PickUpRock : MonoBehaviour {
 
 	public int playerId;
 	private Player player;
-	public Transform arm;
+    Transform arm;
 	Rigidbody2D rb;
 
 	bool canHold = false;
@@ -29,10 +29,15 @@ public class PickUpRock : MonoBehaviour {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             isHolding = true;
             print("WHY");
+
+            if (player.GetButtonDown("Right Object"))
+                right = true;
+            else
+                left = true;
 		}
-        if (isHolding && !player.GetButton("Right Object") && right) {
+        if (isHolding && player.GetButtonUp("Right Object") && right) {
             resetCube();
-		}else if (isHolding && !player.GetButton("Left Object") && left) {
+		}else if (isHolding && player.GetButtonUp("Left Object") && left) {
             resetCube();
 		}
         if (isHolding)
@@ -45,10 +50,6 @@ public class PickUpRock : MonoBehaviour {
         if ((col.gameObject.tag == "RGrab" || col.gameObject.tag == "LGrab") && !isHolding) {
 			arm = col.transform;
             print("shit");
-            if (col.gameObject.tag == "RGrab")
-                right = true;
-            else
-                left = true;
 		}
 	}
 
@@ -56,10 +57,6 @@ public class PickUpRock : MonoBehaviour {
 	{
 		if ((col.gameObject.tag == "RGrab" || col.gameObject.tag == "LGrab") && !isHolding) {
 			arm = null;
-            if (col.gameObject.tag == "RGrab")
-                right = false;
-            else
-                left = false;
         }
 	}
 
@@ -75,5 +72,7 @@ public class PickUpRock : MonoBehaviour {
             right = false;
         else
             left = false;
+
+        print("RESTING");
     }
 }
