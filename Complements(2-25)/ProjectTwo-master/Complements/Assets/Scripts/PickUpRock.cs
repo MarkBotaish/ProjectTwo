@@ -12,7 +12,6 @@ public class PickUpRock : MonoBehaviour {
 	Rigidbody2D rb;
     float velocity = 0;
 
-	bool canHold = false;
     bool isHolding = false;
     bool right = false;
     bool left = false;
