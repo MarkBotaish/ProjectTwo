@@ -3065,6 +3065,7 @@ GameObject:
   - component: {fileID: 1002418014}
   - component: {fileID: 1002418013}
   - component: {fileID: 1002418012}
+  - component: {fileID: 1002418015}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3117,6 +3118,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002418015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002418011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1bd819e42f61498b961ae6849f2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOne: {fileID: 1357098556}
+  playerTwo: {fileID: 817647401}
 --- !u!1 &1057034500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,11 +3704,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4232033974467560, guid: 24fbc4683ee20434b86639fb0b1e696b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 66.24
+      value: 48.13
       objectReference: {fileID: 0}
     - target: {fileID: 4232033974467560, guid: 24fbc4683ee20434b86639fb0b1e696b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.65
+      value: 6.68
       objectReference: {fileID: 0}
     - target: {fileID: 4232033974467560, guid: 24fbc4683ee20434b86639fb0b1e696b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3722,7 +3736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4232033974467560, guid: 24fbc4683ee20434b86639fb0b1e696b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 31.273838
+      value: 17.042353
       objectReference: {fileID: 0}
     - target: {fileID: 4232033974467560, guid: 24fbc4683ee20434b86639fb0b1e696b, type: 2}
       propertyPath: m_LocalScale.y

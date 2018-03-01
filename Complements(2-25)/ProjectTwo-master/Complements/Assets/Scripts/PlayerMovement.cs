@@ -48,6 +48,9 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		CheckInput ();
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.05f, ground);
+
+        if (rb.velocity.y < -90)
+            rb.velocity = new Vector2(rb.velocity.x, -90);
 	}
 
 	void FixedUpdate()
