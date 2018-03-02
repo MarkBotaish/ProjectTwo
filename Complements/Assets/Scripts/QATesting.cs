@@ -18,8 +18,8 @@ public class QATesting : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            playerOne.transform.position = new Vector3(196, -6, 0);
-            playerTwo.transform.position = new Vector3(202, -6, 0);
+            playerOne.transform.position = new Vector3(170, -6, 0);
+            playerTwo.transform.position = new Vector3(175, -6, 0);
         }
 
     }

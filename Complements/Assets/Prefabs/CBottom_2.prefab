@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61037440087341576}
   m_Layer: 0
   m_Name: CGround_Collider_2
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,8 +50,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1854332279439712}
   m_LocalRotation: {x: -0, y: -0, z: -0.0041117733, w: 0.99999154}
-  m_LocalPosition: {x: 162.61113, y: 4.6504765, z: 0}
-  m_LocalScale: {x: 1.155306, y: 1, z: 1}
+  m_LocalPosition: {x: 166.68, y: 2.59, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4589082437209576}
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4634953, y: 0.0070008636}
+  m_Offset: {x: 2.3682017, y: 0.12181991}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -93,7 +93,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.9269905, y: 1.1317033}
+  m_Size: {x: 6.1175776, y: 1.3613414}
   m_EdgeRadius: 0
 --- !u!212 &212069167105886978
 SpriteRenderer:
