@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4340592163301810}
   - component: {fileID: 61160940143130208}
   - component: {fileID: 114324844807126900}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: RightGrab
   m_TagString: RGrab
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 4938934778768044}
   - component: {fileID: 61222910448883132}
   - component: {fileID: 114764108157705904}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: LeftGrab
   m_TagString: LGrab
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846119722322072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.489998, y: -3.89, z: 0}
+  m_LocalPosition: {x: -2.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4643850293957158}
@@ -707,7 +707,7 @@ MonoBehaviour:
   leftGrab: {fileID: 1915194552754562}
   ground:
     serializedVersion: 2
-    m_Bits: 4294951935
+    m_Bits: 4294935551
   canJump: 0
   grabEffect: {fileID: 1654937298616542, guid: bc3ed55960f996e4584571fa66a3eb7d, type: 2}
 --- !u!212 &212122544176615586

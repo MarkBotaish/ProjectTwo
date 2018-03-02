@@ -8,7 +8,8 @@ public class PickUpRock : MonoBehaviour {
 	public int playerId;
     public PlayerMovement playerObject;
 	private Player player;
-    Transform arm;
+    Transform Larm;
+    Transform Rarm;
 	Rigidbody2D rb;
     float velocity = 0;
 
@@ -20,22 +21,31 @@ public class PickUpRock : MonoBehaviour {
 	void Start () {
 		player = ReInput.players.GetPlayer (playerId);
 		rb = GetComponent<Rigidbody2D> ();
-		arm = null;
+		Larm = null;
+        Rarm = null;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if((player.GetButtonDown("Right Object") || player.GetButtonDown("Left Object")) && arm != null && !isHolding){
-			GetComponent<BoxCollider2D> ().isTrigger = true;
+        if (player.GetButtonDown("Right Object") && Rarm != null && !isHolding){
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            transform.SetParent(Rarm);
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             isHolding = true;
-            print("WHY");
 
-            if (player.GetButtonDown("Right Object"))
-                right = true;
-            else
-                left = true;
-		}
+            right = true;
+            left = false;
+        }
+        if (player.GetButtonDown("Left Object") && Larm != null && !isHolding)
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            isHolding = true;
+            transform.SetParent(Larm);
+            left = true;
+            right = false;
+        }
+      
         if (isHolding && player.GetButtonUp("Right Object") && right) {
             resetCube();
 		}else if (isHolding && player.GetButtonUp("Left Object") && left) {
@@ -43,47 +53,67 @@ public class PickUpRock : MonoBehaviour {
 		}
         if (isHolding)
         {
-            gameObject.transform.position = arm.position;
-            velocity = playerObject.getdeltaLeft();
-           // print(velocity);
+            if (right)
+            {
+                gameObject.transform.position = Rarm.position;
+                velocity = transform.root.gameObject.GetComponent<PlayerMovement>().getdeltaRight();
+            }
+            else
+            {
+                gameObject.transform.position = Larm.position;
+                velocity = transform.root.gameObject.GetComponent<PlayerMovement>().getdeltaLeft();
+            }
+                
         }
 
 	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if ((col.gameObject.tag == "RGrab" || col.gameObject.tag == "LGrab") && !isHolding) {
-			arm = col.transform;
-            print("shit");
-		}
-	}
-
+        if (col.gameObject.tag == "RGrab" && !isHolding)
+            Rarm = col.transform;
+        
+        if (col.gameObject.tag == "LGrab" && !isHolding)
+            Larm = col.transform;
+        
+    }
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if ((col.gameObject.tag == "RGrab" || col.gameObject.tag == "LGrab") && !isHolding) {
-			arm = null;
-        }
-	}
+        if (col.gameObject.tag == "RGrab" && !isHolding)
+            Rarm = null;
+        
+        if (col.gameObject.tag == "LGrab" && !isHolding)
+            Larm = null;
+        
+    }
 
     void resetCube()
     {
-        arm.DetachChildren();
+
+        Vector3 direction = Vector3.zero ;
+        if (left)
+            direction = transform.root.GetComponent<PlayerMovement>().getLeftAngle();
+        else if (right)
+            direction = transform.root.GetComponent<PlayerMovement>().getRightAngle();
+
+        if (Rarm != null)
+            Rarm.DetachChildren();
+
+        if (Larm != null)
+            Larm.DetachChildren();
         GetComponent<BoxCollider2D>().isTrigger = false;
         rb.constraints = RigidbodyConstraints2D.None;
-        
-        rb.velocity = Vector3.up * (velocity / 180) * 200;
+       
+
+        rb.velocity = direction * (velocity / 180) * 200;
         if (rb.velocity.magnitude > 15)
             rb.velocity = rb.velocity.normalized * 15;
 
-        print(rb.velocity);
         isHolding = false;
-        arm = null;
 
         if (right)
             right = false;
         else
             left = false;
-
-        print("RESTING");
     }
 }

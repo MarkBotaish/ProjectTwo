@@ -33,6 +33,12 @@ public class PlayerMovement : MonoBehaviour {
     float prevLeft = 0;
     float deltaLeft = 0;
 
+    float prevRight = 0;
+    float deltaRight = 0;
+
+    float rightRotation = 0;
+    float leftRotation = 0;
+
 	//Particle Effects - Andy
 	public GameObject grabEffect;
 
@@ -143,16 +149,18 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((player.GetAxis("Right Joystick X") != 0.0f || player.GetAxis("Right Joystick Y") != 0.0f) && !player.GetButton("Right Grab"))
         {
-            float rightAngle = Mathf.Atan2(-player.GetAxis("Right Joystick Y"), player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
-            deltaLeft = (rightAngle + 180) - prevLeft;
-            prevLeft = rightAngle +180;
-            rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightAngle);
+            rightRotation = Mathf.Atan2(-player.GetAxis("Right Joystick Y"), player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
+            deltaRight = (rightRotation + 180) - prevRight;
+            prevRight = rightRotation + 180;
+            rightArm.transform.rotation = Quaternion.Euler(0, 0, -rightRotation);
         }
 
         if ((player.GetAxis("Right Joystick X") != 0.0f || player.GetAxis("Right Joystick Y") != 0.0f) && !player.GetButton("Left Grab"))
         {
-            float leftAngle = Mathf.Atan2(player.GetAxis("Right Joystick Y"), -player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
-            leftArm.transform.rotation = Quaternion.Euler(0, 0, -leftAngle);
+            leftRotation = Mathf.Atan2(player.GetAxis("Right Joystick Y"), -player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
+            deltaLeft = (rightRotation + 180) - prevLeft;
+            prevLeft = rightRotation + 180;
+            leftArm.transform.rotation = Quaternion.Euler(0, 0, -leftRotation);
         }
     }
 
@@ -180,6 +188,11 @@ public class PlayerMovement : MonoBehaviour {
         return Mathf.Abs(deltaLeft);
     }
 
+    public float getdeltaRight()
+    {
+        return Mathf.Abs(deltaRight);
+    }
+
     //Spawns particles at location of player's hand
     private void GrabEffect(Vector2 _spawnPos)
 	{
@@ -197,6 +210,20 @@ public class PlayerMovement : MonoBehaviour {
         rb.gravityScale = (0.0f);
         climbR = temp.transform.position;
         GrabEffect(climbR);
+    }
+
+    public Vector3 getRightAngle()
+    {
+        float x = rightGrab.transform.position.x - rightArm.transform.position.x;
+        float y = rightGrab.transform.position.y - rightArm.transform.position.y;
+        return new Vector3(x, y, 0.0f).normalized;
+    }
+
+    public Vector3 getLeftAngle()
+    {
+        float x = leftGrab.transform.position.x - leftArm.transform.position.x;
+        float y = leftGrab.transform.position.y - leftArm.transform.position.y;
+        return new Vector3(x, y, 0.0f).normalized;
     }
 
 }
