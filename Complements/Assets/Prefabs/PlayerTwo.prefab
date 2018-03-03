@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 70476656656179686}
   m_Layer: 10
   m_Name: Legs
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1988374839624560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.08, y: 0, z: 0}
+  m_LocalPosition: {x: -0.83646035, y: -3.709695, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4332325933802752}
@@ -389,7 +389,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975489542555120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 0, z: 0}
+  m_LocalPosition: {x: -0.003, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4183939348857448}
@@ -470,7 +470,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.27
+  m_Radius: 0.15
 --- !u!61 &61187405325240434
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -494,7 +494,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.63, y: 2.2630675}
+  m_Size: {x: 0.63, y: 1.89}
   m_EdgeRadius: 0
 --- !u!61 &61252994540424244
 BoxCollider2D:
@@ -708,6 +708,8 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 4294951935
+  canRightGrab: 0
+  canLeftGrab: 0
   canJump: 0
   grabEffect: {fileID: 1654937298616542, guid: bc3ed55960f996e4584571fa66a3eb7d, type: 2}
 --- !u!212 &212207529902650230

@@ -261,7 +261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846119722322072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.91, y: 0, z: 0}
+  m_LocalPosition: {x: -6.489998, y: -3.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4643850293957158}
@@ -404,7 +404,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718495493185266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 0, z: 0}
+  m_LocalPosition: {x: -0.003, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4141396317021856}
@@ -470,7 +470,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.27
+  m_Radius: 0.15
 --- !u!61 &61106866000591576
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -619,7 +619,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.63, y: 2.2630675}
+  m_Size: {x: 0.63, y: 1.89}
   m_EdgeRadius: 0
 --- !u!70 &70403231575496390
 CapsuleCollider2D:
@@ -708,7 +708,10 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 4294935551
+  canRightGrab: 0
+  canLeftGrab: 0
   canJump: 0
+  hasJumped: 0
   grabEffect: {fileID: 1654937298616542, guid: bc3ed55960f996e4584571fa66a3eb7d, type: 2}
 --- !u!212 &212122544176615586
 SpriteRenderer:

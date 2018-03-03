@@ -6,7 +6,6 @@ using Rewired;
 public class PickUpRock : MonoBehaviour {
 
 	public int playerId;
-    public PlayerMovement playerObject;
 	private Player player;
     Transform Larm;
     Transform Rarm;
@@ -84,7 +83,9 @@ public class PickUpRock : MonoBehaviour {
         
         if (col.gameObject.tag == "LGrab" && !isHolding)
             Larm = null;
-        
+        if (col.gameObject.tag == "Legs" && Larm == null && Rarm == null)
+            GetComponent<BoxCollider2D>().isTrigger = false;
+
     }
 
     void resetCube()
