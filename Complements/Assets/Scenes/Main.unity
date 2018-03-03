@@ -280,11 +280,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114310059794097294, guid: 683de23943c671144b5c348e8dc4e62a,
-        type: 2}
-      propertyPath: playerObject
-      value: 
-      objectReference: {fileID: 1528390078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 683de23943c671144b5c348e8dc4e62a, type: 2}
   m_IsPrefabParent: 0
@@ -1024,12 +1019,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1846119722322072, guid: 08632f7a15d10ca44b45db8bf88395aa,
     type: 2}
   m_PrefabInternal: {fileID: 2032346350}
---- !u!114 &1528390078 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114879342827119002, guid: 08632f7a15d10ca44b45db8bf88395aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 2032346350}
-  m_Script: {fileID: 11500000, guid: b8d03ed39dff01347a671c11829d8eed, type: 3}
 --- !u!1001 &1577150267
 Prefab:
   m_ObjectHideFlags: 0
@@ -1723,7 +1712,7 @@ GameObject:
   - component: {fileID: 2129574907}
   - component: {fileID: 2129574906}
   - component: {fileID: 2129574905}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Box (2)
   m_TagString: Climbable
   m_Icon: {fileID: 0}

@@ -21,8 +21,10 @@ public class PlayerMovement : MonoBehaviour {
     float distance;
 
     bool grounded = false;
-    bool canRightGrab = false;
-    bool canLeftGrab = false;
+
+    public bool canRightGrab = false;
+    public bool canLeftGrab = false;
+
     bool hasPressedRight = false;
     bool hasPressedLeft = false;
 
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckInput ();
-        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.05f, ground);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
 
         if (rb.velocity.y < -90)
             rb.velocity = new Vector2(rb.velocity.x, -90);
@@ -76,9 +78,6 @@ public class PlayerMovement : MonoBehaviour {
 
         if (player.GetAxis("Move Horizontal") == 0.0f && !(hasPressedLeft || hasPressedRight))
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
-
-        if (grounded)
-            canJump = false;
          
 
         if (player.GetButtonDown("Jump") && grounded && !canJump)
@@ -86,6 +85,7 @@ public class PlayerMovement : MonoBehaviour {
             rb.velocity = transform.up * jumpSpeed;
         }else if (player.GetButtonDown("Jump") && canJump)
         {
+            
             canJump = false;
             rb.gravityScale = (30.0f);
             rb.velocity = transform.up * jumpSpeed;
@@ -101,12 +101,12 @@ public class PlayerMovement : MonoBehaviour {
             if (!hasPressedRight)
                 InitClimb(rightGrab, ref hasPressedRight);
             
-            if (climbR.y >= transform.position.y || !stopMovingX)
+            if ((climbR.y >= transform.position.y || !stopMovingX) || (climbR.y >= transform.position.y && stopMovingX))
             {
                 x = climbR.x;
                 if (stopMovingX)
                     x = transform.position.x;
-             
+                
                 gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, climbR.y,0.0f), 5.0f * Time.deltaTime);
                 
                 float rightAngle = Mathf.Atan2((rightArm.transform.position.y - climbR.y), -1.0f * (rightArm.transform.position.x - climbR.x)) * 180 / Mathf.PI;
@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour {
             hasPressedRight = false;
         }
 
-        if(!hasPressedLeft && !hasPressedRight)
+        if((!hasPressedLeft && !hasPressedRight))
         {
             rb.gravityScale = (30.0f);
         }
@@ -158,8 +158,8 @@ public class PlayerMovement : MonoBehaviour {
         if ((player.GetAxis("Right Joystick X") != 0.0f || player.GetAxis("Right Joystick Y") != 0.0f) && !player.GetButton("Left Grab"))
         {
             leftRotation = Mathf.Atan2(player.GetAxis("Right Joystick Y"), -player.GetAxis("Right Joystick X")) * 180 / Mathf.PI;
-            deltaLeft = (rightRotation + 180) - prevLeft;
-            prevLeft = rightRotation + 180;
+            deltaLeft = (leftRotation + 180) - prevLeft;
+            prevLeft = leftRotation + 180;
             leftArm.transform.rotation = Quaternion.Euler(0, 0, -leftRotation);
         }
     }
