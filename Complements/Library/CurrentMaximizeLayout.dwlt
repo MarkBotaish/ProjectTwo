@@ -20,12 +20,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1536
     height: 731
   m_MinSize: {x: 911, y: 421}
   m_MaxSize: {x: 22006, y: 10000}
   vertical: 0
   controlID: 6324
+=======
+    width: 1280
+    height: 664
+  m_MinSize: {x: 713, y: 613}
+  m_MaxSize: {x: 18008, y: 18063}
+  vertical: 0
+  controlID: 13385
+>>>>>>> ConnorLittleBranch
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -49,10 +58,16 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 394
     width: 710
     height: 335
   m_PersistentViewDataDictionary: {fileID: 0}
+=======
+    y: 440
+    width: 767
+    height: 297
+>>>>>>> ConnorLittleBranch
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
@@ -61,10 +76,17 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -355
     m_HBaseRangeMax: 355
     m_VBaseRangeMin: -159
     m_VBaseRangeMax: 159
+=======
+    m_HBaseRangeMin: -191.75
+    m_HBaseRangeMax: 191.75
+    m_VBaseRangeMin: -70
+    m_VBaseRangeMax: 70
+>>>>>>> ConnorLittleBranch
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -81,25 +103,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 710
       height: 318
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 355, y: 159}
+=======
+      width: 767
+      height: 280
+    m_Scale: {x: 2, y: 2}
+    m_Translation: {x: 383.5, y: 140}
+>>>>>>> ConnorLittleBranch
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -355
       y: -159
       width: 710
       height: 318
+=======
+      x: -191.75
+      y: -70
+      width: 383.5
+      height: 140
+>>>>>>> ConnorLittleBranch
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 2
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 710, y: 335}
+=======
+  m_LastWindowPixelSize: {x: 1534, y: 594}
+>>>>>>> ConnorLittleBranch
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -121,12 +161,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 712
     height: 731
   m_MinSize: {x: 202, y: 421}
   m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
   controlID: 6291
+=======
+    width: 769
+    height: 664
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
+  vertical: 1
+  controlID: 13364
+>>>>>>> ConnorLittleBranch
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,10 +192,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 712
     height: 375
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 769
+    height: 346
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> ConnorLittleBranch
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -175,19 +231,33 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 92
     width: 710
     height: 354
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 4627.262304874305
+=======
+    y: 94
+    width: 767
+    height: 325
+  m_SceneLighting: 1
+  lastFramingTime: 8752.394621014595
+>>>>>>> ConnorLittleBranch
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 145.65779, y: 1.1327415, z: 4.260505}
     speed: 2
     m_Value: {x: 145.65779, y: 1.1327415, z: 4.260505}
+=======
+    m_Target: {x: 173.1, y: -11.3, z: 0}
+    speed: 2
+    m_Value: {x: 173.1, y: -11.3, z: 0}
+>>>>>>> ConnorLittleBranch
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -215,14 +285,19 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 36.185955
     speed: 2
     m_Value: 36.185955
+=======
+    m_Target: 22
+    speed: 2
+    m_Value: 22
+>>>>>>> ConnorLittleBranch
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
-  m_ShowGlobalGrid: 1
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
@@ -244,9 +319,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 375
     width: 712
     height: 356
+=======
+    y: 346
+    width: 769
+    height: 318
+>>>>>>> ConnorLittleBranch
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -277,6 +358,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 467
     width: 710
@@ -284,6 +366,16 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_AnimEditor: {fileID: 0}
   m_Locked: 0
+=======
+    x: 769
+    y: 0
+    width: 234
+    height: 664
+  m_MinSize: {x: 234, y: 613}
+  m_MaxSize: {x: 10004, y: 18063}
+  vertical: 1
+  controlID: 13330
+>>>>>>> ConnorLittleBranch
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -300,8 +392,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 712
     y: 0
+<<<<<<< HEAD
     width: 246
     height: 731
+=======
+    width: 234
+    height: 270
+>>>>>>> ConnorLittleBranch
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 9}
@@ -331,6 +428,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 714
     y: 92
     width: 242
@@ -341,6 +439,17 @@ MonoBehaviour:
     m_SelectedIDs: 60f9faff
     m_LastClickedID: -329376
     m_ExpandedIDs: a0eefcff3a76fdffba73feff8ae6ffff000000005c4300000844000014440000
+=======
+    x: 771
+    y: 94
+    width: 230
+    height: 249
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 1624}
+    m_SelectedIDs: 30b2f6ff
+    m_LastClickedID: -609744
+    m_ExpandedIDs: c4e1ffff34e2ffff7ae3ffffaee3ffff00000000b6450000e6450000fc4500005a46000066460000724600009446000060470000be470000
+>>>>>>> ConnorLittleBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -376,12 +485,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 958
     y: 0
     width: 234
     height: 731
   m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
+=======
+    x: 0
+    y: 270
+    width: 234
+    height: 121
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
+>>>>>>> ConnorLittleBranch
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -395,6 +513,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
+=======
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 771
+    y: 364
+    width: 230
+    height: 100
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 391
+    width: 234
+    height: 273
+  m_MinSize: {x: 234, y: 271}
+  m_MaxSize: {x: 10004, y: 10021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+>>>>>>> ConnorLittleBranch
   m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -409,11 +581,18 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 960
     y: 92
     width: 230
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
+=======
+    x: 771
+    y: 485
+    width: 230
+    height: 252
+>>>>>>> ConnorLittleBranch
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -426,10 +605,15 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Prefabs
+=======
+    - Assets/Scripts
+>>>>>>> ConnorLittleBranch
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Quincy\Documents\GitHub\ProjectTwo\Complements
@@ -439,6 +623,17 @@ MonoBehaviour:
     m_SelectedIDs: f02b0000
     m_LastClickedID: 11248
     m_ExpandedIDs: 00000000482a00007c2a0000fe2a0000882b0000f02b00009e2c0000a62c0000de2e0000f62f000022300000503000002c31000042310000943100003c35000000ca9a3bffffff7f
+=======
+  - Assets/Scripts
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: /Users/Connor/Documents/GitHub/ProjectTwo/Complements
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 185}
+    m_SelectedIDs: 76450000
+    m_LastClickedID: 17782
+    m_ExpandedIDs: 000000000c430000184300003a4300006443000088430000c6430000ca430000d8440000e844000000450000564500005a450000724500000448000000ca9a3bffffff7f
+>>>>>>> ConnorLittleBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -466,7 +661,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000482a00007c2a0000fe2a0000882b0000f02b00009e2c0000a62c0000de2e0000f62f000022300000503000002c31000042310000943100003c35000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 000000000c430000184300003a4300006443000088430000c6430000ca430000d8440000e844000000450000564500005a450000724500000448000000ca9a3bffffff7f
+>>>>>>> ConnorLittleBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,10 +690,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 60f9faff
     m_LastClickedInstanceID: -329376
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
+=======
+    m_SelectedInstanceIDs: 30b2f6ff
+    m_LastClickedInstanceID: -609744
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 4a05fdffcc440000722c0000
+>>>>>>> ConnorLittleBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -519,9 +725,15 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
+<<<<<<< HEAD
     m_GridSize: 64
   m_DirectoriesAreaWidth: 96
 --- !u!114 &12
+=======
+    m_GridSize: 16
+  m_DirectoriesAreaWidth: 110
+--- !u!114 &14
+>>>>>>> ConnorLittleBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -535,6 +747,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1192
     y: 0
     width: 344
@@ -542,6 +755,15 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
+=======
+    x: 1003
+    y: 0
+    width: 277
+    height: 664
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 15}
+>>>>>>> ConnorLittleBranch
   m_Panes:
   - {fileID: 13}
   m_Selected: 0
@@ -568,11 +790,18 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1194
     y: 92
     width: 342
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
+=======
+    x: 1005
+    y: 94
+    width: 275
+    height: 643
+>>>>>>> ConnorLittleBranch
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
