@@ -12,6 +12,7 @@ TagManager:
   - Climbable
   - PlayerHead
   - Legs
+  - Bat
   layers:
   - Default
   - TransparentFX
