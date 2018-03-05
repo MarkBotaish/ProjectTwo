@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2017.3.1f1
 =======
 m_EditorVersion: 2017.3.0f3
 >>>>>>> 39e8e3e87d4409e6f0e1089cf66be367c788d137
+=======
+m_EditorVersion: 2017.1.1f1
+>>>>>>> ConnorLittleBranch
