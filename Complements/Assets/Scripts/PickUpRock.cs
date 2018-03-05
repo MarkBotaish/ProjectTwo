@@ -28,6 +28,10 @@ public class PickUpRock : MonoBehaviour {
 	void Update () {
         if (player.GetButtonDown("Right Object") && Rarm != null && !isHolding){
             GetComponent<BoxCollider2D>().isTrigger = true;
+            if (playerId == 0)
+                gameObject.layer = 10;
+            else
+                gameObject.layer = 11;
             transform.SetParent(Rarm);
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             isHolding = true;
@@ -50,6 +54,9 @@ public class PickUpRock : MonoBehaviour {
 		}else if (isHolding && player.GetButtonUp("Left Object") && left) {
             resetCube();
 		}
+
+        if (player.GetButton("Left Grab") || player.GetButton("Right Grab"))
+            resetCube();
         if (isHolding)
         {
             if (right)
@@ -83,14 +90,18 @@ public class PickUpRock : MonoBehaviour {
         
         if (col.gameObject.tag == "LGrab" && !isHolding)
             Larm = null;
+
+        if (Larm == null && Rarm == null)
+            isHolding = false;
         if (col.gameObject.tag == "Legs" && Larm == null && Rarm == null)
             GetComponent<BoxCollider2D>().isTrigger = false;
 
     }
 
-    void resetCube()
+    public void resetCube()
     {
 
+        gameObject.layer = 15;
         Vector3 direction = Vector3.zero ;
         if (left)
             direction = transform.root.GetComponent<PlayerMovement>().getLeftAngle();
