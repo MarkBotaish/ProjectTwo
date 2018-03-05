@@ -7,19 +7,24 @@ using Rewired;
 
 public class WinState : MonoBehaviour {
 
-	public int playerId;
+    public GameObject panel;
+    public GameObject playerOne;
+    public GameObject playerTwo;
+
 	Player player;
-	public int numOfObjects = 0;
+    Player player2;
+    public int numOfObjects = 0;
 	public bool canRestart = false;
 
 	// Use this for initialization
 	void Start () {
-		player = ReInput.players.GetPlayer (playerId);
-	}
+		player = ReInput.players.GetPlayer (0);
+        player2 = ReInput.players.GetPlayer(1);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.GetButtonDown ("Interact") && canRestart)
+		if ((player.GetButtonDown ("Interact") || player2.GetButtonDown("Interact")) && canRestart) 
 			SceneManager.LoadScene ("MainMenu");
 	}
 
@@ -33,7 +38,13 @@ public class WinState : MonoBehaviour {
 				GameObject.Find ("Timer").GetComponent<Timer> ().enabled = false;
 				GameObject.Find ("WinText").GetComponent<Text> ().enabled = true;
 				canRestart = true;
-			}
+                panel.SetActive(true);
+                playerOne.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                playerTwo.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+                playerOne.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                playerTwo.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
 		}
 	}
 
