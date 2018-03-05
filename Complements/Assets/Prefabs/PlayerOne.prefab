@@ -183,10 +183,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4999606490068394}
   - component: {fileID: 212479999322453590}
-  - component: {fileID: 58792852589314212}
+  - component: {fileID: 70253423626919086}
   m_Layer: 10
   m_Name: v4-head
-  m_TagString: Untagged
+  m_TagString: PlayerHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 70403231575496390}
   m_Layer: 10
   m_Name: Legs
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,21 +456,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58792852589314212
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1853602513417022}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.15
 --- !u!61 &61106866000591576
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -621,6 +606,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.63, y: 1.89}
   m_EdgeRadius: 0
+--- !u!70 &70253423626919086
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853602513417022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.40123641}
+  m_Size: {x: 0.15, y: 0.9531605}
+  m_Direction: 0
 --- !u!70 &70403231575496390
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -711,7 +711,6 @@ MonoBehaviour:
   canRightGrab: 0
   canLeftGrab: 0
   canJump: 0
-  hasJumped: 0
   grabEffect: {fileID: 1654937298616542, guid: bc3ed55960f996e4584571fa66a3eb7d, type: 2}
 --- !u!212 &212122544176615586
 SpriteRenderer:

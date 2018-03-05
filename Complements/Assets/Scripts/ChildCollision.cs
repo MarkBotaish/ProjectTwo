@@ -28,8 +28,9 @@ public class ChildCollision : MonoBehaviour {
         if (collision.tag == "Climbable")
         {
             if (gameObject.tag == "RGrab")
+            {
                 player.setRightGrab(false);
-
+            }
             if (gameObject.tag == "LGrab")
                 player.setLeftGrab(false);
 

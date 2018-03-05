@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61960313118537300}
   - component: {fileID: 114128344531269044}
   - component: {fileID: 114972285349160792}
-  - component: {fileID: 50388410238943722}
+  - component: {fileID: 50342521972927756}
   m_Layer: 15
   m_Name: Small Rock
   m_TagString: Untagged
@@ -38,13 +38,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252635960026704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64.196655, y: -2.33, z: 0.484375}
+  m_LocalPosition: {x: 112.230034, y: 14.4400015, z: 0.60286295}
   m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50388410238943722
+--- !u!50 &50342521972927756
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1

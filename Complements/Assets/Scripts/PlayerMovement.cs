@@ -68,13 +68,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void CheckInput()
     {
-        if (player.GetAxis("Move Horizontal") > 0.0f && !(hasPressedLeft || hasPressedRight))
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-
-
-        if (player.GetAxis("Move Horizontal") < 0.0f && !(hasPressedLeft || hasPressedRight))
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
-
+        if (player.GetAxis("Move Horizontal") != 0.0f && !(hasPressedLeft || hasPressedRight))
+            rb.velocity = new Vector2(speed * player.GetAxis("Move Horizontal"), rb.velocity.y);
 
         if (player.GetAxis("Move Horizontal") == 0.0f && !(hasPressedLeft || hasPressedRight))
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
@@ -93,7 +88,7 @@ public class PlayerMovement : MonoBehaviour {
             hasPressedLeft = false;
             canLeftGrab = false;
             canRightGrab = false;
-        
+    
         }
 
         if (player.GetButton("Right Grab") && canRightGrab)

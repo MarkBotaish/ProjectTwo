@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212528149627666562}
   - component: {fileID: 61766296436989916}
   - component: {fileID: 114856945189919420}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: v4-chest
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4807105634910292}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,9 +52,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4082817051628324}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Right Arm
-  m_TagString: Untagged
+  m_TagString: RGrab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4142259087115584}
   - component: {fileID: 61276728529822008}
   - component: {fileID: 114309048397911446}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: LeftGrab
   m_TagString: LGrab
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4149865639769972}
   - component: {fileID: 212608168201330352}
   - component: {fileID: 61663457721999034}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4382708507248028}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4331191405831398}
   - component: {fileID: 212981506125919368}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: v4-leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086488345724340}
   - component: {fileID: 212207529902650230}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: v4-leg (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -149,10 +149,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4219424731290264}
   - component: {fileID: 212789734647956986}
-  - component: {fileID: 58628661550209546}
-  m_Layer: 10
+  - component: {fileID: 70574090204575802}
+  m_Layer: 11
   m_Name: v4-head
-  m_TagString: Untagged
+  m_TagString: PlayerHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 4510347684265398}
   - component: {fileID: 61454599920256998}
   - component: {fileID: 114732999224828562}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: RightGrab
   m_TagString: RGrab
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 4367918230916148}
   - component: {fileID: 61187405325240434}
   - component: {fileID: 114496746616206206}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Trigger
   m_TagString: Legs
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4357800227556366}
   - component: {fileID: 70476656656179686}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Legs
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 4183939348857448}
   - component: {fileID: 50054018733297994}
   - component: {fileID: 114938731354749932}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: PlayerTwo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 4289544342522350}
   - component: {fileID: 212989429906942830}
   - component: {fileID: 61252994540424244}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,21 +456,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58628661550209546
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647159030104296}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.15
 --- !u!61 &61187405325240434
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -635,6 +620,21 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.22093463}
   m_Size: {x: 0.55, y: 1.5218692}
+  m_Direction: 0
+--- !u!70 &70574090204575802
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1647159030104296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.40074503}
+  m_Size: {x: 0.15, y: 0.957536}
   m_Direction: 0
 --- !u!114 &114309048397911446
 MonoBehaviour:
