@@ -41,5 +41,11 @@ public class MainMenu : MonoBehaviour {
 			else if (!playGame)
 				Application.Quit ();
 		}
-	}
+
+        if (player.GetButtonDown("Interact"))
+        {
+            SceneManager.LoadScene("Help");
+        }
+
+    }
 }
